@@ -1,12 +1,16 @@
 package com.example.transaction_recorder.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TransactionRequest {
+    @JsonProperty("user_id")
     private String userId;
     private String amount;
+    @JsonProperty("transaction_type")
     private String transactionType;
     private String memo;
 
-    // Getters and Setters
+    // ゲッターとセッターを追加
     public String getUserId() {
         return userId;
     }

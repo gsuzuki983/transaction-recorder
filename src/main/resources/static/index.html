@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>購入履歴登録</title>
+  <title>TransactionRecord</title>
   <script>
     async function sendPurchase() {
       // 購入データを準備
       const requestData = {
         user_id: "1",
         amount: "1000.00",
-        transaction_type: "購入",
-        memo: "追加購入"
+        transaction_type: "Purchase",
+        memo: "additional purchase"
       };
 
       try {
         // Spring Boot の API に POST リクエストを送信
-        const response = await fetch('/api/v1/register', {
+        const response = await fetch('/transaction-recorder/api/v1/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -26,21 +26,21 @@
 
         // レスポンスを確認
         if (response.ok) {
-          alert('購入履歴が登録されました！');
+          alert('Your purchase history has been registered!');
         } else {
           const error = await response.json();
-          console.error('エラー:', error);
-          alert('購入履歴の登録に失敗しました。');
+          console.error('Failed:', error);
+          alert('Registration of purchase history failed.');
         }
       } catch (err) {
-        console.error('通信エラー:', err);
-        alert('サーバーとの通信に失敗しました。');
+        console.error('communication error:', err);
+        alert('Failed to communicate with server.');
       }
     }
   </script>
 </head>
 <body>
-  <h1>購入履歴登録</h1>
-  <button onclick="sendPurchase()">購入する</button>
+  <h1>TransactionRecord</h1>
+  <button onclick="sendPurchase()">Buy</button>
 </body>
 </html>
