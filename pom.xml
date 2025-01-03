@@ -104,6 +104,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>transaction-recorder</finalName>
 	</build>
 
 </project>
