@@ -1,14 +1,14 @@
-version: 0.0
+version: 0.2
 os: linux
 files:
   - source: target/transaction-recorder.war
     destination: /opt/tomcat/webapps/
 hooks:
   BeforeInstall:
-    - location: /scripts/stop_tomcat.sh
+    - location: ./scripts/stop_tomcat.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: /scripts/start_tomcat.sh
+    - location: ./scripts/start_tomcat.sh
       timeout: 300
       runas: root
