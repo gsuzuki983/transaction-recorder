@@ -14,3 +14,4 @@ artifacts:
   files:
     - appspec.yml
     - target/transaction-recorder.war
+  discard-paths: no
