@@ -12,4 +12,5 @@ phases:
       - mvn clean package
 artifacts:
   files:
+    - appspec.yml
     - target/transaction-recorder.war
