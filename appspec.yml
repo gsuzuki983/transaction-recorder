@@ -8,6 +8,9 @@ hooks:
     - location: ./scripts/stop_tomcat.sh
       timeout: 300
       runas: root
+    - location: ./scripts/remove_existing_war.sh
+      timeout: 300
+      runas: root
   AfterInstall:
     - location: ./scripts/start_tomcat.sh
       timeout: 300
