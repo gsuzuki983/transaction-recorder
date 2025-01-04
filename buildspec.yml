@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - export JAVA_HOME=/usr/lib/jvm/java-21
+      - export PATH=$JAVA_HOME/bin:$PATH
+      - mvn wrapper:wrapper
+      - chmod +x mvnw # 実行可能権限を付与
+  build:
+    commands:
+      - mvn clean package
+artifacts:
+  files:
+    - target/transaction-recorder.war
